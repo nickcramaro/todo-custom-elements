@@ -1,9 +1,5 @@
 class TodoItem extends HTMLElement {
 
-    static get observedAttributes() {
-        return ['text'];
-    }
-
     connectedCallback() {
         const text = this.getAttribute('text');
         this.log('connected',text);
@@ -17,6 +13,7 @@ class TodoItem extends HTMLElement {
 
     render() {
         const text = this.getAttribute('text');
+        console.log(text);
         this.innerHTML = `
             <p>${text}</p>
         `;

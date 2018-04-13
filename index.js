@@ -1,4 +1,4 @@
-const todos = [
+let todos = [
     'Buy groceries',
     'Do laundry',
     'Write code',

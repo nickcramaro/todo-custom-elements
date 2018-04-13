@@ -1,9 +1,5 @@
 class TodoList extends HTMLElement {
 
-    static get observedAttributes() {
-        return ['todos'];
-    }
-
     connectedCallback() {
         const todos = this.getAttribute('todos');
         this.log('connected', todos);
@@ -17,10 +13,10 @@ class TodoList extends HTMLElement {
 
     render() {
         const todos = this.getAttribute('todos');
-        this.innerHTML = todos.split(',').map(t => {
-            return `
+        todos.split(',').forEach((t, i) => {
+            this.insertAdjacentHTML('beforeend',`
                 <todo-item text="${t}"></todo-item>
-            `;
+            `);
         });
     }
 
