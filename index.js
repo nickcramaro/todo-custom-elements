@@ -23,7 +23,7 @@ class TodoApp extends HTMLElement {
 
     render() {
         this.innerHTML = `
-            <todo-list todos="${todos}"></todo-list>
+            <todo-list todos='${JSON.stringify(todos)}'></todo-list>
         `;
     }
 

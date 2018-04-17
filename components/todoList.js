@@ -12,8 +12,8 @@ class TodoList extends HTMLElement {
     }
 
     render() {
-        const todos = this.getAttribute('todos');
-        todos.split(',').forEach((t, i) => {
+        let todos = JSON.parse(this.getAttribute('todos'));
+        todos.forEach((t, i) => {
             this.insertAdjacentHTML('beforeend',`
                 <todo-item text="${t}"></todo-item>
             `);
